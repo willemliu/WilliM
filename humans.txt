@@ -1,0 +1,15 @@
+/* FoundationCMS was made by WilliM, a vanilla webdevelopment company in Amsterdam, NL */
+/* willim.nl */
+/* humanstxt.org */
+
+/* Willem Liu */
+  Software Developer: Willem Liu
+  Twitter: @willemliu
+  LinkedIn: http://www.linkedin.com/pub/willem-liu/21/383/796
+  Location: Amsterdam, The Netherlands
+  From: Purmerend, The Netherlands
+
+/* SITE */
+  Standards: HTML5, CSS3, JavaScript, PHP
+  Components: jQuery, Foundation, RequireJS
+  Software: Git, Bower, NpmJS, Compass, Grunt

@@ -1,0 +1,1 @@
+define({test1:"testNL1",test2:"testNL2",test3:"testNL3"});
