@@ -16,7 +16,7 @@
   } else {
 
     // Request data
-    $widgets = json_decode($HTTP_RAW_POST_DATA, true);
+    $widgets = json_decode(file_get_contents("php://input"), true);
     
     // When the directory is not empty:
     function rrmdir($dir) {

@@ -17,7 +17,7 @@
   } else {
 
     // Request data
-    $widget = json_decode($HTTP_RAW_POST_DATA, true);
+    $widget = json_decode(file_get_contents("php://input"), true);
     
     $response = [];
     
