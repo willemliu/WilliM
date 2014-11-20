@@ -1,19 +1,28 @@
 <?php
   require_once('lib/config.php');
 
-  // Load widgets for page /index.php and also from / because that's an alias.
-  $widgets = $foundationWidgets->loadWidgetsFromDb($_SERVER['PHP_SELF']);
+  // Load widgets and settings for page /index.php and also from / because that's an alias.
+  $pageName = $_SERVER['PHP_SELF'];
+  $widgets = $foundationWidgets->loadWidgetsFromDb($pageName);
+  $pageSettings = $settings->getPageSettings($pageName);
   $sub = "index.php";
-  $str = $_SERVER['PHP_SELF'];
-  if(( substr( $str, strlen( $str ) - strlen( $sub ) ) == $sub )) {
-    $widgets = array_merge($widgets, $foundationWidgets->loadWidgetsFromDb(str_ireplace("index.php", "", $str)));
+  if(( substr( $pageName, strlen( $pageName ) - strlen( $sub ) ) == $sub )) {
+    $widgets = array_merge($widgets, $foundationWidgets->loadWidgetsFromDb(str_ireplace("index.php", "", $pageName)));
+    $pageSettings = $settings->getPageSettings(str_ireplace("index.php", "", $pageName));
   }
   
   $editableHtml = '';
   $editBottomPaddingHtml = '';
   if($_SESSION['loggedIn']) {
 $editableHtml = <<<EOT
-    <div id="rootEditable" class="row editable"><div class="small-12 columns"><div class="toolButtons"><div class="addWidget"><i class="fi-plus"></i></div></div></div></div>
+    <div id="rootEditable" class="row editable">
+      <div class="small-12 columns">
+        <div class="toolButtons">
+          <div class="addWidget large-6 columns"><i class="fi-plus"></i></div>
+          <div class="settingsButton large-6 columns"><i class="fi-widget"></i></div>
+        </div>
+      </div>
+    </div>
 EOT;
 $editBottomPaddingHtml = <<<EOT
     <div class="editBottomPadding"></div>
@@ -26,9 +35,11 @@ $html = <<<EOT
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Karlijn Scholten</title>
+    {$echo((isset($pageSettings['headStart'])?$pageSettings['headStart']:''))}
+    <title>{$echo((isset($pageSettings['title'])?$pageSettings['title']:'FoundationCMS'))}</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <script src="js/lib/modernizr.js"></script>
+    {$echo((isset($pageSettings['headEnd'])?$pageSettings['headEnd']:''))}
   </head>
   <body>
     {$editableHtml}

@@ -80,6 +80,11 @@
   }
   
   /**
+   * Page settings
+   */
+  $settings = $dice->create('PageSettings');
+  
+  /**
    * FoundationWidgets.
    * Is used to keep a register of FoundationWidgets.
    */
