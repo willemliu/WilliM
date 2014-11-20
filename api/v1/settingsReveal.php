@@ -27,8 +27,14 @@ $html = <<<EOT
           <label>Bottom of <b>&lt;head/&gt;</b>
             <textarea name="headEnd" rows="5">{$echo((isset($pageSettings['headEnd'])?$pageSettings['headEnd']:''))}</textarea>
           </label>
-          <input type="submit" class="button tiny" name="submit" value="Save" />
         </fieldset>
+        <fieldset>
+          <legend>Body settings</legend>
+          <label>Bottom of <b>&lt;body/&gt;</b>
+            <textarea name="bodyBottom" rows="5">{$echo((isset($pageSettings['bodyBottom'])?$pageSettings['bodyBottom']:''))}</textarea>
+          </label>
+        </fieldset>
+        <input type="submit" class="button tiny" name="submit" value="Save" />
       </form>
       <a class="close-reveal-modal">&#215;</a>
 EOT;
