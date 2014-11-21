@@ -7,6 +7,7 @@
     $pageSettings = $settings->getPageSettings(str_ireplace("index.php", "", $pageName));
   }
 
+  $resourcesHtml = $settings->getResourcesHtml();
 
   $html = '';
   // Check if sufficient privileges.
@@ -34,6 +35,21 @@ $html = <<<EOT
             <textarea name="bodyBottom" rows="5">{$echo((isset($pageSettings['bodyBottom'])?$pageSettings['bodyBottom']:''))}</textarea>
           </label>
         </fieldset>
+        <fieldset>
+          <legend>Resources</legend>
+          <label>Drop resources here
+            <div class="resourceDropTarget">
+              <i id="resourceDropIcon" class="fi-plus"></i>
+              <progress style="display: none;" id="uploadProgress" min="0" max="100" value="0">0</progress>
+            </div>
+          </label>
+          <div class="resources">
+            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+            {$resourcesHtml}
+            </ul>
+          </div>
+        </fieldset>
+        <input type="hidden" name="removeResource" value="" />
         <input type="submit" class="button tiny" name="submit" value="Save" />
       </form>
       <a class="close-reveal-modal">&#215;</a>
