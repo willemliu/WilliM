@@ -48,6 +48,7 @@ $html = <<<EOT
     {$editBottomPaddingHtml}
   
     <script type="text/javascript" data-main="js/config" src="js/require.js"></script>
+    {$echo((isset($pageSettings['bodyBottom'])?$pageSettings['bodyBottom']:''))}
   </body>
 </html>
 EOT;
