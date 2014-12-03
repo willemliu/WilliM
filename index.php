@@ -18,8 +18,9 @@ $editableHtml = <<<EOT
     <div id="rootEditable" class="row editable">
       <div class="small-12 columns">
         <div class="toolButtons">
-          <div class="addWidget large-6 columns"><i class="fi-plus"></i></div>
-          <div class="settingsButton large-6 columns"><i class="fi-widget"></i></div>
+          <div title="Add widget" class="addWidget large-5 columns"><i class="fi-plus"></i></div>
+          <div title="Page settings" class="settingsButton large-5 columns"><i class="fi-widget"></i></div>
+          <div title="Logout" class="logoutButton large-2 columns"><i class="fi-stop"></i></div>
         </div>
       </div>
     </div>
