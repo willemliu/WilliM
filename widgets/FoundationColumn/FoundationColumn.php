@@ -77,9 +77,6 @@ EOT;
       $dbFields = $this->foundationWidgets->getWidgetContentFromDb($id);
       $echo = $this->heredoc->getHeredoc();
 $html = <<<EOT
-      <form class="editForm" method="POST">
-        <fieldset>
-          <legend>Edit {$this->name}</legend>
           <label>Title
             <input type="text" name="title" value="{$echo($this->getFieldValue($dbFields, $fields, 'title'))}" placeholder="The content title"/>
           </label>
@@ -89,31 +86,9 @@ $html = <<<EOT
           <label>Suffix content
             <textarea type="text" name="suffixContent" rows="5" placeholder="The content which is shown after any subwidgets">{$echo($this->getFieldValue($dbFields, $fields, 'suffixContent'))}</textarea>
           </label>
-          <label>Status
-            <select name="status">
-              <option value="draft" class="redText" {$echo((strcmp($this->getFieldValue($dbFields, $fields, 'status'), 'draft'))?'':'selected')}>draft</option>
-              <option value="published" class="greenText" {$echo((strcmp($this->getFieldValue($dbFields, $fields, 'status'), 'published'))?'':'selected')}>published</option>
-            </select>
-          </label>
-          <label>CSS classes
-            {$echo($this->getCssClassesSelectHtml(json_decode($this->getFieldValue($dbFields, $fields, 'classes'))))}
-          </label>
-          <label>Anchor name
-            <input type="text" name="anchorName" value="{$echo($this->getFieldValue($dbFields, $fields, 'anchorName'))}" placeholder="anchor"/>
-          </label>
-          <label>Data equalizer watch
-            <input type='hidden' value='' name='data-equalizer-watch'/>
-            <input type="checkbox" name="data-equalizer-watch" value="data-equalizer-watch" {$echo(empty($this->getFieldValue($dbFields, $fields, 'data-equalizer-watch'))?'':'checked')}/>            
-          </label>
-          <input type="hidden" name="page" value="{$echo($this->getFieldValue($dbFields, $fields, 'page'))}" />
-          <input type="hidden" name="widget_id" value="{$echo($id)}" />
-          <input type="hidden" name="type" value="{$this->name}" />
-          <input type="submit" class="button tiny" name="submit" value="Save" />
-          <input type="button" class="button alert right tiny removeButton" name="remove" value="Remove widget" />
-        </fieldset>
-      </form>
-      <a class="close-reveal-modal">&#215;</a>
 EOT;
+      $html = $this->decorateEditHtml($id, $fields, $dbFields, $html);
+
       return $html;
     }
     

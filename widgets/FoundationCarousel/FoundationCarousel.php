@@ -75,12 +75,6 @@ $html = <<<EOT
             {$images}
             </ul>
           </div>
-          <label>Status
-            <select name="status">
-              <option value="draft" class="redText" {$echo((strcmp($this->getFieldValue($dbFields, $fields, 'status'), 'draft'))?'':'selected')}>draft</option>
-              <option value="published" class="greenText" {$echo((strcmp($this->getFieldValue($dbFields, $fields, 'status'), 'published'))?'':'selected')}>published</option>
-            </select>
-          </label>
           <input type="hidden" name="removeImage" value="" />
 EOT;
       $html = $this->decorateEditHtml($id, $fields, $dbFields, $html);
