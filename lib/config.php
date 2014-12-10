@@ -90,5 +90,3 @@
    */
   $foundationWidgets = $dice->create('Foundation\\FoundationWidgets');
   $foundationWidgets->setDice($dice);
-  
-?>

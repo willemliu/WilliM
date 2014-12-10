@@ -27,4 +27,3 @@
       echo "Unknown webservice\r\n";
     }
   }
-?>

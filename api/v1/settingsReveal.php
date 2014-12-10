@@ -58,4 +58,3 @@ EOT;
 
   echo $html;
   echo "<!-- " . $execTime->getTime() . "ms -->\r\n";
-?>

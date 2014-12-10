@@ -70,5 +70,3 @@
   }
   $response['execTime'] = $execTime->getTime();
   echo json_encode($response);
-
-?>

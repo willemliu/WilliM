@@ -124,4 +124,3 @@ EOT;
       $this->heredoc = $heredoc;      
     }
   }  
-?>

@@ -249,4 +249,3 @@ EOT;
       return $vars;
     }
   }
-?>

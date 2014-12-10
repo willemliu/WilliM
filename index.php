@@ -57,4 +57,3 @@ echo $html;
 echo "<!-- page: {$_SERVER['PHP_SELF']} -->\r\n";
 echo "<!-- " . $execTime->getTime() . "ms -->\r\n";
 echo "<!-- DB queries: " . $db->getQueryCount() . " -->\r\n";
-?>
