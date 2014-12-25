@@ -51,6 +51,14 @@
         "small-11 columns",
         "small-12 columns"
       ),
+      "Centered" => array(
+        "small-centered",
+        "small-uncentered",
+        "medium-centered",
+        "medium-uncentered",
+        "large-centered",
+        "large-uncentered"
+      ),
       "Shadow effects" => array(
         "effect1",
         "effect2",
