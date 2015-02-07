@@ -73,6 +73,7 @@
         "fullWidth",
         "fullHeight",
         "clear",
+        "centered-width",
         "paddingTop",
         "paddingRight",
         "paddingBottom",
