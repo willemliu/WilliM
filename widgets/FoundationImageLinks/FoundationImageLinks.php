@@ -61,11 +61,25 @@ $imagesHtml = <<<EOT
         <p>{$content}</p>
 EOT;
       }
-      if(empty($imagesList) === false) {
+      if(empty($images) === false) {
+        $smallBlockGrid = $this->getFieldValue($dbFields, $fields, 'small-block-grid');
+        if(empty($smallBlockGrid)) {
+          $smallBlockGrid = 3;
+        }
+        $mediumBlockGrid = $this->getFieldValue($dbFields, $fields, 'medium-block-grid');
+        if(empty($mediumBlockGrid)) {
+          $mediumBlockGrid = 6;
+        }
+        $largeBlockGrid = $this->getFieldValue($dbFields, $fields, 'large-block-grid');
+        if(empty($largeBlockGrid)) {
+          $largeBlockGrid = 12;
+        }
+        
 $imagesHtml = <<<EOT
-        <ul class="clearing-thumbs small-block-grid-3 medium-block-grid-6 large-block-grid-6">{$imagesList}</ul>
+        <ul class="clearing-thumbs small-block-grid-{$smallBlockGrid} medium-block-grid-{$mediumBlockGrid} large-block-grid-{$largeBlockGrid}" data-clearing>{$imagesList}</ul>
 EOT;
       }
+
       
 $html = <<<EOT
       {$anchorNameHtml}
@@ -121,6 +135,15 @@ $html = <<<EOT
           </div>
           <label>Thumbnail CSS classes
             {$echo($this->getCssClassesSelectHtml(json_decode($this->getFieldValue($dbFields, $fields, 'individualClasses')), 'individualClasses', array('Shadow effects') ))}
+          </label>
+          <label>small-block-grid-[n]
+            <input type="number" name="small-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'small-block-grid'))}" placeholder="3"/>
+          </label>
+          <label>medium-block-grid-[n]
+            <input type="number" name="medium-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'medium-block-grid'))}" placeholder="6"/>
+          </label>
+          <label>large-block-grid-[n]
+            <input type="number" name="large-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'large-block-grid'))}" placeholder="12"/>
           </label>
           <input type="hidden" name="removeImage" value="" />
           <input type="hidden" name="thumbnailWidth" value="120" />
