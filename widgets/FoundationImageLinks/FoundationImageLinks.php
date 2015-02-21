@@ -64,15 +64,15 @@ EOT;
       if(empty($images) === false) {
         $smallBlockGrid = $this->getFieldValue($dbFields, $fields, 'small-block-grid');
         if(empty($smallBlockGrid)) {
-          $smallBlockGrid = 3;
+          $smallBlockGrid = 1;
         }
         $mediumBlockGrid = $this->getFieldValue($dbFields, $fields, 'medium-block-grid');
         if(empty($mediumBlockGrid)) {
-          $mediumBlockGrid = 6;
+          $mediumBlockGrid = 2;
         }
         $largeBlockGrid = $this->getFieldValue($dbFields, $fields, 'large-block-grid');
         if(empty($largeBlockGrid)) {
-          $largeBlockGrid = 12;
+          $largeBlockGrid = 3;
         }
         
 $imagesHtml = <<<EOT
@@ -129,7 +129,7 @@ $html = <<<EOT
             </div>
           </label>
           <div class="images">
-            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+            <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
             {$images}
             </ul>
           </div>
@@ -137,13 +137,13 @@ $html = <<<EOT
             {$echo($this->getCssClassesSelectHtml(json_decode($this->getFieldValue($dbFields, $fields, 'individualClasses')), 'individualClasses', array('Shadow effects') ))}
           </label>
           <label>small-block-grid-[n]
-            <input type="number" name="small-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'small-block-grid'))}" placeholder="3"/>
+            <input type="number" name="small-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'small-block-grid'))}" placeholder="1"/>
           </label>
           <label>medium-block-grid-[n]
-            <input type="number" name="medium-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'medium-block-grid'))}" placeholder="6"/>
+            <input type="number" name="medium-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'medium-block-grid'))}" placeholder="2"/>
           </label>
           <label>large-block-grid-[n]
-            <input type="number" name="large-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'large-block-grid'))}" placeholder="12"/>
+            <input type="number" name="large-block-grid" value="{$echo($this->getFieldValue($dbFields, $fields, 'large-block-grid'))}" placeholder="3"/>
           </label>
           <input type="hidden" name="removeImage" value="" />
           <input type="hidden" name="thumbnailWidth" value="120" />
