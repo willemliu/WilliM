@@ -76,7 +76,7 @@ EOT;
         }
         
 $imagesHtml = <<<EOT
-        <ul class="clearing-thumbs small-block-grid-{$smallBlockGrid} medium-block-grid-{$mediumBlockGrid} large-block-grid-{$largeBlockGrid}" data-clearing>{$imagesList}</ul>
+        <ul class="small-block-grid-{$smallBlockGrid} medium-block-grid-{$mediumBlockGrid} large-block-grid-{$largeBlockGrid}">{$imagesList}</ul>
 EOT;
       }
 
