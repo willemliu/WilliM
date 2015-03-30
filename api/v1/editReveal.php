@@ -4,7 +4,7 @@
   // Check if sufficient privileges.
   if($credentials->hasEditAccess() === false) {
     $html = 'Insufficient rights<a class="close-reveal-modal">&#215;</a>';
-  } else {
+  } else if(isset($_REQUEST['type'])) {
     $widget = $dice->create('Foundation\\' . $_REQUEST['type']);
     $html = $widget->getEditHtml($_REQUEST["id"]);
   }
