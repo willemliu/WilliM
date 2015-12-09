@@ -38,8 +38,6 @@ $html = <<<EOT
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {$echo((isset($pageSettings['headStart'])?$pageSettings['headStart']:''))}
     <title>{$echo((isset($pageSettings['title'])?$pageSettings['title']:'FoundationCMS'))}</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <script src="js/lib/modernizr.js"></script>
     {$echo((isset($pageSettings['headEnd'])?$pageSettings['headEnd']:''))}
   </head>
   <body>
@@ -48,6 +46,8 @@ $html = <<<EOT
   
     {$editBottomPaddingHtml}
   
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script src="js/lib/modernizr.js"></script>
     <script type="text/javascript" data-main="js/config" src="js/require.js"></script>
     {$echo((isset($pageSettings['bodyBottom'])?$pageSettings['bodyBottom']:''))}
   </body>
