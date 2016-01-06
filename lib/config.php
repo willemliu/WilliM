@@ -2,7 +2,7 @@
   /**
    * Turn on all error reporting.
    */
-  error_reporting(E_ALL ^ (E_STRICT | E_DEPRECATED));
+  error_reporting(E_ALL ^ (E_STRICT | E_DEPRECATED | E_NOTICE));
   ini_set('display_errors', 1);
   
   /**
