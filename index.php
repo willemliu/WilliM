@@ -36,6 +36,10 @@ $html = <<<EOT
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/lib/modernizr.js" as="script">
+    <link rel="preload" href="js/require.js" as="script">
+    <link rel="preload" href="js/config.js" as="script">
     {$echo((isset($pageSettings['headStart'])?$pageSettings['headStart']:''))}
     <title>{$echo((isset($pageSettings['title'])?$pageSettings['title']:'FoundationCMS'))}</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />

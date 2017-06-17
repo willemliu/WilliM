@@ -60,8 +60,7 @@ CREATE TABLE IF NOT EXISTS `page_settings` (
   `page` varchar(1024) COLLATE utf8_unicode_ci NOT NULL DEFAULT '/',
   `page_md5` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`,`page_md5`),
-  UNIQUE KEY `name_2` (`name`,`page_md5`)
+  UNIQUE KEY `name` (`name`,`page_md5`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=30 ;
 
 -- --------------------------------------------------------
